@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="container">
+      <header>
+
+        <nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img class="mypic" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAArlBMVEX///8hlfI/UbQAjfEWk/Jpr/Xm8f05TbMQkfKHvvd/ufYAi/EAjvF2tvYAkPExRrEpQK81SbImPq7s9f4pmPLS5fzI4Puhy/it0fn5/P9CoPNqsPXg7v2+2vrj5fLx8vnIzObX2u21ut5dqvSfptWZx/hxfMR6hMeMlM3A2/pVp/TX6fyQwve8wOHR1OpaaLyIkcyssdpPX7l/icmWndFHWLdib7/o6fSmrNhrd8KHVBDnAAAPw0lEQVR4nO1d6ULiOhQupkCRtogsQsEVdUZgHEdn8b7/i10Kbc6XvSyKSr9fYxpOzp6TpNN4XokSJUqUKFGiRIkSJUqUKFGixHoYdmrj2Ww2rnWG+2Zlt6j1B/No2g3ZAmGK5T+602g+6Nf2zdyWGPbOooSxOA4CvyLDD4I4ZiyJznqf06TDh0bCwjhQJJMRxCFLGg+fTMrZXcJi1Wxm+DFL7mb7Zrsoeg2fuU2nMSbzG719M+/GuOGH6xhPMmXoN8b7FsGKQbKR9URLJoN9i2FCpxHGW4q3Qhw2OvsWRoPxqLmt+QhBc/TRnHU2cbqnH1KPwBmrAZt8pNQ6njAXxz6b9Dph9kfY6RX6xUexYydqOrMnmy64rbH8r9pSK64f+c3oQ8TjncYaAesm+GfwkPYUJPS8hwAdO+lq/Nxnd/sVboF+RcmfQViZzzogdjxdlWSShN5wCr/1O7N5JVSEjCv9fYrnDUeKq8UsSguTLrWw46y3LKHnHcPPu4u/exFTFMZGeyxZz+Xa02fdwZKfKhmDHE2VcOHiZPpq2jAcdOU868fn7y/aEsOqZECfTTOXGoS8ESJJIyGKGGa1TH8qRzar7sWMPWnN57Nqnt1rwPacfqGT0JuDMvLmcVWS0Q/2UJLPmyb5PC/h/MUR/EQroRfxyPMT3qjI2HzvpCqkwZTnBCqQMx3PnklC1McZtc4SMQbyhPxOGPtCWo8rmAs6kD0ErgwSDiEr4Qx/Lk5Egf+OJc6DoF6/OReeTrhNmBg9Bgm9PifnT4QHc9FV2cPbiKPiTgjBODHxGzfE35kk9BrcWEyc32uJYMb3CsYILeg3z6THNNd3pSdGCS2/ORNqXhZ574AJqjXuyswO+OOmvPwxS9jjXhHLC/xaVxhv4r05pphjeEFG4Cr3FX2bJfQi+plCEUu7SjDdlSAmJCCgrwl9mimYkt0tEg4peGWvTxMbeGqQKM93igTG8rua1Vts4dQiIWgmVol2uu8mIgqoDQlitKI+tEnoEV1VNWLwv6WIGIOsoetB5YlmPWCV8JwKIR3hBgTj28ViFRSpTBJLUCKVs34Kq4Q0Y+gXS2cwCcfVbcQw4xgF1C/Z7FzaJTy3amfxHEVUc/gOcAZ+0tRvLfSoi+6xXUKKRKZfKvVBRKZ1oe0g0Des1kZ5nCrz9hIOCbmLByM9+Z5bx1ughtQNAtKiQpPxPaeEHl8LM8MmYg+1vOvjYyJtVh+fKoK59rlLwgZ3AZMPoiPpo3Vj0IqoEhv9g+eZUG8DbmODjfieuJn7PmU7f6cl6hltplS6UVUP0MLI3sGfaJ+PgHvDGBHsUoY7zDZjYUHom+DsUvh5kTEW4bK7RX/lo2JXAka7OxjcLYIdLYj7zD3WnsB2Mytu/uLB20Nbpa+L44/qoymCHRSos6Z7nD1C2QxaH3TSaczgRTM9nONvQ0bst/VymFZ8QfXYghEfc2rsw3NyEBn7TLmAI9twdHoXbvn2zdBwBGHWRGg+JXJVbSl6efWkX55wwGHHducZc64rRy3PKzJm7uOqvJfI+zjKzhpPD4YyvyBgPeSgwxmzbDAUkrBaQFUp5rRtuc0LG8cU0faOhZyrkIRF3H0Jzpm/xYzR4a7gOva5CwowX0hC3ilwHMOcc/9qbm5EbkJHmoEwtBUZhST0aInlGJMnm82NCCZ0zau5k1pr4WIS8jkldIw5296IfFfBlj6WGOeDWXN8MQl5IDLX8o8npUC7O+0GnZY4xyrGVTEJi2lr2ZN8bLM5kTaWnFvMPGD1m2wZiknID3fc4VV1bl3ZUeEacu4W5Lsn9uxQUEKetZy7aWP7DrQL/bAQ2ymGxTJ8QQlp5nH6HldGuMlSeBIHK5g2gAm9ZtbVvuau5d2aVgn7bP2BNzn9Ho6iHM6+/bznyJq2O6P1ukVuw3Ae9/kCY4kSJUqUKFHiQ+LytM5x8oPa/7ZXba1bantq8a7tI976ekIUTqnzv5zw6T9qxMFeeetRm7e2XqjzbTZc+y+1/cDBLouJWD/iaP8GXrK2OpD/SX3bxMnjCVE4vSBeWllbi/R2cUpdTx5580ubt9Z/0nB/8+FAb7ctolAvJqD3jdiuf+Ot15xtIA+itG546xDYbl3x5qec7foTb7sC/k6ptryB5hMajtM9uXZwa8cvIP/MW1/bKvlLtAAN6j2DhL946x9q1Y71hwhcoxdcqq3tVx1VGMsOdDJS4H1dJS8wAhSewHm/a9RBTD+BOz4BBa3qSB31/7Q9H71iQCejpEDKrt/nbT+gEcIFnYyiFhySAvEv6QLcXAhw6kxKJs3/QyUXXkKhk+VqudAZ9jdZAHOS0Lmt68wNi/EGbi50vrV1vtKGlAvfiTxX7I2O/L1O0yl0in2GHJ3zIgQyEkDvyPMH6o2HHARyG93cDpCGm+alriFPTUcn/5ACON9JNl2g7/NAhEAW3Hwxd6rqQCVzsXXWcAOUxUMaBOTkhyYLoJPlxn0E/vgc8kOjyxU00wUq+ahl1mURgDtkiR11ysnrNKFynmXe2zYQyMXRaCIDBECe7VBALg5QFZVsByjmVGGZyEOUt28FAqCQ+otCk1xSI4enKCTLdpKSVy4JgYy1lhOg2kyYp7aG/CtwcSVSUKsu9Auef3C6Fgng3HKjUXKmOAhkyc3tQPJXMitEHgJDrnnvZS+4FiXM7AIWuBcJgHEy1r8LSs5q0B8Kp8UADrHKm5eCh+TkYVqWa14w70r4X4IFMq+GQJbcHPN0Jryo5MyrwZklN3dAnpyvWjrymjkrB2TO1ex5L+SJLGhUXyGAg/zRKXmVmaDubnvrgH64YuV3W0P+UrY0AJ/9ELWRyZ02gmGVpR0+0yl5Nb+TYWU3dwCcbOl/P+sS+dSyUKGrNS8NvfS/CzEMM8tShV4/kglA4C6rCVnJK8tCtL7KFKwAJ0uzHp/a60j+Ruwkgpxs6cG8b97cehUUV39ReAAvuMK+fBV8KSiuVXRhsQJUK+l0kQtcvz8C8qBVteYF8Z9B4Hru/0unAv7UpR2Jnz4kJecRncp9ZXFzB8jJUkJ5xmrfvAB5WDF+VwiAk6VhlHc94VpvCcEqLCxWoNkhJU9KznWXTiIQrH8UAnZQhKT+ndcjJ9dInhOXK64lYL37j6afP3yJsfANSQsSaKpLS0Ku5F9cR89YiGjc3A5ysnTpfcr5yMnXn2VPlgFO9si5XVgj9+1FpQIyaJZ2WPV63n9cydy3F8FPpeAaC4sVSL2Lqiv/I9Vli5MHDnQ1L0XpYvDc4xbOnYfOIgH9FvxQAVh4yP84oehYEJNn3XWA7OfenkZ8nilajxTl2pqXDLTw6DysF+mAB18bAlnn5txsqY9cgJJ5pNyCG2nc3AFystPhPXkIl7b9+ossoKt5ycT1b0MKQ1rrn15SOtMu7agia13dgJK5tH8v0NPWBTjZBfdMYLz+32+ywJWOAnnB8zWFoQeBCDWljgA5CeXwpTPyneUb9JN1gU6WcbKqi3j7T+JPW/OSk9V/wxxDjBMBaf2cgSaT+vfc3Ms1Fq8piYLWze34JxW6R/msDLUu14GWwq1cZmWzslxCH2kWFiuoI62UjBs2GdbZwcihoXKtJ2+oeeVS+SiflZ8Vzg1LO1WZKyUrRe56Oxg57hXyKyoqeUPNq9oqmxOUGtpUcf1SdJTNCaqStW7ugOJkuakU/kw1r6LozFSqcQ1Lu2tFmdlWh2Jcg5vb8SjzkRfHCnnTZvqL0nFlqqFsXNOZkdoxU7ISKWvtYORQnCyvGhTypppXcbK8NJMD0Xhm9Hyk76hEyroLixWOZPJZ+4W8Z2PaTJedjM9Zyo6BaWn3JHXkGVOJoE0ElJ2MMqbMn6nmlZ2Mu5Ky62M6M5Ldhe84SpFS+GjUSp5cSSJvrnklb+SCyKIbl3aSN5IgRt7WguRkNKdK5M01r7TDSSskcdvH6ObyNjIJIkVK4aNRCSIV2pMWyVtqXnGXGkpHcSayLO2EowAsXETdFT8aFSFoGl1dIK9d2q0gOhlkdHEmsiztxJwEG/9iklh3B0NLHhUtHnNZal5BQlC0GIiWpZ2Qk1DJQqRYlGyH4GRY2grkbZvp/4EqhI0KdA/bmZFQ/6OSL0wP1gK+BCAUViJ5CwWMN2EFZ3wgA91IWD/UTQ/WAkgozjgwrrXmRScTCisMROvSDmcmQZcYKevvYOQAJxMdAchba16s/IR8p3+hRQM8XhCUjK8yrHM0KgJeGTsVHAEC8eTKRgGO38RJBd+XsRGAsxFRyRChG+xg5Lii1/7E9c2/04KvA37j7xi2RFvf8pca29YzI3hRUlSyB+80Xq0jVIkSJUqUKFHioHAA/4f0y/8/4AP4v9xf///jH8A3Fei7GM5PMO7puxj04Y4NdxO//LdNDuD7NF//G0NoRMeVS5/1O1Ff/1tfB/C9Nvjmnr3S+rTf3IObir7qdxPx25ejhgX8GhV/auzDv/UaHBv7TDmdyDbcaGffvhS+XxpY4BfpxvtsSQe7bX+dx9f/Bu3X/47wAXwL+gC+5/31v8l+AN/VP4C7Eb7+/RYf546Sh7e6o0S4wfhr3jNzAHcFff37ng7gzq4DuHetyN15di4//N15B3D/oXgL6Ze8w1K6aPUr3kMqiqi7T+Bt7pKFMd9awAO4D3idO53lac1ypzOZ0HGn85tlUcQ738sNg73TvdwHcLe6FPoLM4pLCVppyfwaJCSdSCuiuXCxuvOilF1i7AtbN3EF53daYlQCIZ8aJKSTA3FRcV4RDBj4O1zSuzGcCqNXWAI7szRjiIcdBgnhCAJiepaIW3zx9L2/Ky8GY8VnVVIx8IypQS9hpNPHeMLEbdr3C0FCT9wWQhlhuRxCjGolnNMWEG8eVyX5fN/5etRbYFiVtop9Ns1SywDYJuXrJLwDZWRTYX8qyVdh1X3dfHAeS6z4YXewZKYK2YOLqJEQBFy9lzQcdEOZqH459T4YjpQd/5hFqUfBzhUv7VQJsSBL5/pexMQMlnbe89UV/YrCUhBW5rMOGCJPg7KEQkL2O7N5JVTOD+LKG2zIrIk7OWpSIVk3wT+D5VwtSXge4A+TLlOPR3y2hxSqohNpZJTApmNJwvHUeaTlN6OtXrPYIZTZS8Mtm/T4nnbY6RX5RfVdixgHZpOm6wjOhyAL5HypIGhOdnB+vVOMR04ZiyNojj6S/XJ0GqGSVzdCHDY+SvwpGCSahLim+Viy9Rsyb4rx3HfGmBmL384/ontK6DX8jSwZML+xlwJ7E8zuEibXrHbjxSy5+2jJ04HhQyNhYew2ZhCHLGk8fM5704a9syhhLI6DQDWoHwRxzFgSnfU+p3SEWn8wj6bdkC0Qplj+ozuN5oP+zg9y94thpzaezWbjWuezG61EiRIlSpQoUaJEiRIlSpQo8f74Hye7XFidYAT2AAAAAElFTkSuQmCC" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto py-3 text-center">
+                <li class="nav-item active"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">tutorial</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </header>
+
+      <main id="mn" class="bg-light">
+
+        <!--carosel-->
+        <div class="container text-white">
+          <section id="feedback">
+            <div class="section-title">
+              <h3 class="text-center">Carousel Design</h3>
+              <hr class="hr-style">
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-sm-my-4">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                  </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <p>Lorem 1.  Voluptatibus facilis dolore expedita aperiam quo dolores recusandae sed sequi odio nam facere neque vero delectus voluptates, qui consectetur, accusamus temporibus harum!</p>
+                      <img style="height: 140px;" src="new2.jpeg" alt="">
+                      <h6>Abdun Naim</h6>
+                    </div>
+                    <div class="carousel-item">
+                      <p>Lorem 2.  Voluptatibus facilis dolore expedita aperiam quo dolores recusandae sed sequi odio nam facere neque vero delectus voluptates, qui consectetur, accusamus temporibus harum!</p>
+                      <img style="height: 140px;" src="new.jpg" alt="">
+                      <h6>Abdun Naim</h6>
+                    </div>
+                    <div class="carousel-item">
+                      <p>Lorem 3.  Voluptatibus facilis dolore expedita aperiam quo dolores recusandae sed sequi odio nam facere neque vero delectus voluptates, qui consectetur, accusamus temporibus harum!</p>
+                      <img style="height: 140px;" src="pexels-photo.jpg" alt="">
+                      <h6>Abdun Naim</h6>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div>
+          <h3 class="myHead text-center py-3 font-weight-bolder">My Services</h3>
+        </div>
+          <div class="row">
+            
+              <div class=" text-lg-center my-service col-lg-3 col-md-6 text-center text-sm-left">
+               <i class="rounded-circle bg-primary text-white p-2 fa-2x fas fa-hands-helping"></i>
+                <h5 class="text-uppercase">Web designing</h5>
+                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                   Ullam nihil incidunt recusandae esse doloremque officia error ut omnis officiis necessitatibus.
+                </p>
+              </div>
+
+              <div class="text-lg-center my-service col-lg-3 col-md-6 text-center text-sm-left">
+               <i class="rounded-circle bg-primary text-white p-2 fa-2x fas fa-hands-helping"></i>
+                <h5 class="text-uppercase">Web designing</h5>
+                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                   Ullam nihil incidunt recusandae esse doloremque officia error ut omnis officiis necessitatibus.
+                </p>
+              </div>
+
+              <div class="text-lg-center my-service col-lg-3 col-md-6 text-center text-sm-left">
+               <i class="rounded-circle bg-primary text-white p-2 fa-2x fas fa-hands-helping"></i>
+                <h5 class="text-uppercase">Web designing</h5>
+                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                   Ullam nihil incidunt recusandae esse doloremque officia error ut omnis officiis necessitatibus.
+                </p>
+              </div>
+
+              <div class="text-lg-center my-service col-lg-3 col-md-6 text-center text-sm-left">
+                 <i class="rounded-circle bg-primary text-white p-2 fa-2x fas fa-hands-helping"></i>
+                 <h5 class="text-uppercase">Web designing</h5>
+                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                   Ullam nihil incidunt recusandae esse doloremque officia error ut omnis officiis necessitatibus.
+                </p>
+              </div>
+            
+              
+
+          </div>
+          <!--start about section-->
+          <div class="about-section">
+            <div class="jumbotron pt-2">
+
+               <div>
+                <h3 class="text-center mb-3 font-weight-bolder">About Me</h3>
+               </div>
+
+            </div>
+
+            <div class="row">
+
+               <div class="col-md-4 text-center">
+                 <img class="about-img img img-fluid rounded-circle mb-4" src="class2.jpg" alt="">
+               </div>
+
+               <div class="col-md-8">
+                 <p class="text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe atque veritatis ea fugit odit odio molestiae esse nemo
+                    eaque similique nisi laudantium deserunt reiciendis aliquam, harum facere enim tempore voluptatem placeat aliquid pariatur 
+                    unde vel! Tenetur laborum fugiat vel nihil quae eligendi,
+
+                  <a href="#demo" data-toggle="collapse">Learn More</a>
+                  <div id="demo" class="collapse">
+                     <p> rem, molestias illo obcaecati ipsum saepe neque. Vel nesciunt
+                      eveniet magni iure iste sed assumenda, unde praesentium, ab alias asperiores soluta debitis consequuntur obcaecati,
+                      porro illum aliquid ipsa accusantium inventore dolorem repellat temporibus accusamus. Ratione, exercitationem.
+                      Qui, accusantium dolorum repellat impedit, minus sed aliquid 
+                      nulla praesentium dicta tenetur eveniet excepturi consequuntur minima autem maiores nobis itaque perspiciatis eius.</p>
+                  </div>
+
+                  </p>
+
+                  <div class="btn-group btn-block">
+                    <button class="btn btn-info mb-3 btn-lg">CD download</button>
+                    <button class="btn btn-outline-success mb-3 btn-lg">CD download</button>
+                  </div>
+
+                  <div class="text-right alert alert-primary data-dismissible">
+                    <button class="close" data-dismiss="alert">&times;</button>
+                    Have you visited my facebook page ?
+                     <a href="#">Abdun Naim</a>
+                  </div>
+
+                  <div class="text-right alert alert-success data-dismissible">
+                    <button class="close" data-dismiss="alert">&times;</button>
+                    Have you visited my facebook page ?
+                     <a href="#">Abdun Naim</a>
+                  </div>
+               </div>
+
+            </div>
+            
+          </div>
+
+          <!--Table Section-->
+          <div class="table-section my-4">
+            <div class="title text-center mb-3">
+              <h3 class="font-weight-bolder">Table Design</h3>
+            </div>
+            <table class="table table-bordered text-center table-hover">
+              <thead class="table-dark">
+                <tr>
+                  <th>Qualification</th>
+                  <th>Institution</th>
+                  <th>Pasing year</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>PSC</td>
+                  <td>Nischintopur gov. primary school</td>
+                  <td>2013</td>
+                  <td>4.50 / 5.00</td>
+                </tr>
+                <tr>
+                  <td>JSC</td>
+                  <td>Nischintopur high school</td>
+                  <td>2016</td>
+                  <td>4.95 / 5.00</td>
+                </tr>
+                <tr>
+                  <td>SSC</td>
+                  <td>Nischintopur High school</td>
+                  <td>2018</td>
+                  <td>4.67 / 5.00</td>
+                </tr>
+                <tr>
+                  <td>CSE</td>
+                  <td>Chapi Nawabgange polytechnic institute</td>
+                  <td>Running</td>
+                  <td>Running</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!--end about section-->
+
+          <div class="section-card">
+            <div class="title text-center mb-3">
+              <h3 class="font-weight-bolder">Card Design</h3>
+            </div>
+            <div class="row">
+              
+              <div class="col-lg-3 col-md-6">
+                <div id="cd" class="card">
+                  <img class="card-img-top" src="https://thumbs.dreamstime.com/b/ict-information-communication-technology-concept-virtual-screen-ict-information-communication-technology-concept-160470613.jpg" alt="card image">
+                  <div class="card-body">
+                    <h4 class="card-title">HSC ICT</h4>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ullam in, neque ut a commodi!</p>
+                    <a class="card-link stretched-link" target="_blank" href="https://abdunnaim55.blogspot.com/">Visite this playlist</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div id="cd" class="card">
+                  <img id="im" class="card-img-top" src="https://img.freepik.com/free-vector/maths-chalkboard_23-2148178219.jpg?size=626&ext=jpg&ga=GA1.2.1545555405.1616457600" alt="card image">
+                  <div class="card-body">
+                    <h4 class="card-title">HSC MATH</h4>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ullam in, neque ut a commodi!</p>
+                    <a class="card-link stretched-link" target="_blank" href="https://abdunnaim55.blogspot.com/">Visite this playlist</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div id="cd" class="card">
+                  <img id="im" class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuli5S6bgTU3QmF8_xvVuv5bEaP__s2jEZHQ&usqp=CAU" alt="card image">
+                  <div class="card-body">
+                    <h4 class="card-title">HSC PHYSICS</h4>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ullam in, neque ut a commodi!</p>
+                    <a class="card-link stretched-link" target="_blank" href="https://abdunnaim55.blogspot.com/">Visite this playlist</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-6">
+                <div id="cd" class="card">
+                  <img id="im" class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-m8DYmXOoDjhGInJXu1-l68j8lRBMRRiasQ&usqp=CAU" alt="card image">
+                  <div class="card-body">
+                    <h4 class="card-title">HSC CHEMISTRY</h4>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur ullam in, neque ut a commodi!</p>
+                    <a class="card-link stretched-link" target="_blank" href="https://abdunnaim55.blogspot.com/">Visite this playlist</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!--customer review section start-->
+          <div class="review-section bg-light mt-3">
+             <div class="title text-center mb-3">
+              <h3 class=" font-weight-bolder">Customer Review</h3>
+             </div>
+             <div class="row text-center">
+
+                <div class="col-md-4">
+                  <blockquote class="blockquote">
+                    <i class="fa-3x fas fa-user-circle"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi exercitationem IT IS <abbr title="Botstrap 4">BS(4)</abbr></p>
+                  </blockquote>
+                  <footer class="blockquote-footer">
+                    Abdun Naim in <cite>facebook</cite>
+                  </footer>
+                </div>
+
+                <div class="col-md-4">
+                  <blockquote class="blockquote">
+                    <i class="fa-3x fas fa-user-circle"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi exercitationem IT IS <abbr title="Botstrap 4">BS(4)</abbr></p>
+                  </blockquote>
+                  <footer class="blockquote-footer">
+                    Abdun Naim in <cite>facebook</cite>
+                  </footer>
+                </div>
+
+                <div class="col-md-4">
+                  <blockquote class="blockquote">
+                    <i class="fa-3x fas fa-user-circle"></i>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem sequi exercitationem IT IS <abbr title="Botstrap 4">BS(4)</abbr></p>
+                  </blockquote>
+                  <footer class="blockquote-footer">
+                    Abdun Naim in <cite>facebook</cite>
+                  </footer>
+                  
+                </div>
+
+              </div>
+              
+              <!--New tabe navigation bar-->
+
+              <div class="others-section my-4">
+                
+                <ul class="nav nav-pills">
+                   <li class="nav-item"><a data-toggle="pill" class="nav-link active" href="#edu">Education</a></li>
+                   <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#skill">Skill</a></li>
+                   <li class="nav-item"><a data-toggle="pill" class="nav-link" href="#port">Portfolio</a></li>
+                </ul>
+
+                <div class="tab-content">
+                   <div class="tab-pane active" id="edu"><p> 1. Lorem ipsumLorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Evenieth hic adipisicing elit. Evenieth hic  dolor sit amet consectetur, adipisicing elit. Quo iusto, aut maxime architecto ullam magnam amet ducimus.</p></div>
+                   <div class="tab-pane fade" id="skill"><p> 2. Lorem ipsum, dolor sit Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing elit. Evenieth hic adipisicing elit. Evenieth hic amet consectetur adipisicing elit. Fuga magni na Repudiandae illum in consequuntur architecto?</p></div>
+                   <div class="tab-pane fade" id="port"><p> 3. Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consecteturLorem ipsum dolor sit amet consectetur adipisicing elit. Evenieth hic  adipisicing elit. Evenieth hic adipisicing elit. Evenieth hic quas optio, explicabo magni ipsum aperiam modi?</p></div>
+                </div>
+             </div>
+             <!--Media Section-->
+             <div class="media-section bg-white">
+
+               <div class="title text-center mb-3">
+                 <h3 class=" font-weight-bolder">My Blogs</h3>
+               </div>
+
+               <div class="media border p-3">
+                 <img class="rounded-circle mr-4" style="width: 90px;height: 90px;" src="class3.jpg" alt="picture">
+                 <div class="media-body">
+                   <h4>I Love programming and teaching</h4>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quos atque eius recusandae hic reiciendis amet quis reprehenderit, placeat eaque?</p>
+                 </div>
+               </div>
+
+               <div class="media border p-3 my-4">
+                <div class="media-body">
+                  <h4>I Love programming and teaching</h4>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quos atque eius recusandae hic reiciendis amet quis reprehenderit, placeat eaque?</p>
+                </div>
+                <img class="rounded-circle mr-4" style="width: 90px;height: 90px;" src="4.jpg" alt="picture">
+              </div>
+
+              <div class="media border p-3">
+                <img class="rounded-circle mr-4 align-self-center" style="width: 90px;height: 90px;" src="4.jpg" alt="picture">
+                <div class="media-body">
+                  <h4>I Love programming and teaching</h4>
+                  <p>Lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis odit, molestiae a ratione esse iste quia iusto nisi quod neque praesentium vero eius. Ut, earum corrupti quis at consectetur fugiat voluptas sint. Dolor recusandae quo ratione corporis a architecto veniam. ipsum, dolor sit amet consectetur adipisicing elit. Labore, veritatis distinctio impedit voluptas cupiditate, amet velit aperiam assumenda explicabo, perferendis magnam voluptate error unde consectetur sunt dolorem aliquam quasi perspiciatis iusto aliquid repellat expedita voluptates. Dolor cumque sed blanditiis saepe, labore explicabo quidem eos alias veritatis necessitatibus? Reprehenderit, suscipit rerum. Lorem ipsum dolor orem ipsum dolor sit, amet consectetur adipisicing elit.sit, amet consectetur adipisicing elit. Tenetur soluta assumenda eum? Perferendis esse cupiditate cumque inventore, sit quod quis atque dolore obcaecati eligendi amet expedita error quam ex temporibus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus quos atque eius recusandae hic reiciendis amet quis reprehenderit, placeat eaque?</p>
+                </div>
+              </div>
+
+             </div>
+
+             <div class="student-list mt-3 mb-4">
+              <ul class="list-group">
+                 <li class="list-group-item bg-primary text-white">Abdun Naim</li>
+                 <li class="list-group-item bg-success text-white">Md Rahi</li>
+                 <li class="list-group-item bg-info text-white">Md Junayeed</li>
+                 <a class="list-group-item list-group-item-action bg-secondary text-white text-center" href="#">Finised</a>
+              </ul>
+           </div>
+
+          </div>
+          <!--customer review section end-->
+
+          <div class="contact-section bg-primary text-white p-4 my-4">
+
+            <div class="title text-center mb-3">
+              <h3 class=" font-weight-bolder">Form Design</h3>
+            </div>
+
+            <form action="" class="w-50 m-auto was-validated">
+              
+              <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" class="form-control" name="fullname" required>
+                <div class="valid-feedback">valid</div>
+                <div class="invalid-feedback">please enter your name</div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" name="email" id="">
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" class="form-control" name="subject" id="">
+              </div>
+
+              <div class="form-group">
+                <label for="textarea">Text Area</label>
+                <textarea class="form-control" name="textarea" id="" cols="30" rows="10"></textarea>
+              </div>
+
+              <div class="form-group text-center">
+                <button class="btn btn-outline-dark">Submit</button>
+                <button class="btn btn-outline-dark">Reset</button>
+              </div>
+
+            </form>
+
+          </div>
+
+      </main>
+
+      <footer class="mb-5">
+        <ul class="justify-content-center bg-dark pagination py-3">
+           <li class="page-item"><a class="page-link" href="#">1</a></li>
+           <li class="page-item"><a class="page-link" href="#">2</a></li>
+           <li class="page-item"><a class="page-link" href="#">3</a></li>
+           <li class="page-item"><a class="page-link" href="#">4</a></li>
+        </ul>
+     </footer>
+
+  </div>
+
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/4.6.0/jquery.min.js"></script>-->
+
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
+
